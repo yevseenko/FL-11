@@ -97,19 +97,109 @@ both           spaces and
 }
               </code>
             </pre>
-            <h2>Unordered Product List</h2>
           </section>
 
           <section id="list">
-            <h2></h2>
+            <h2>Unordered Product List</h2>
+            <ul>
+              <li>Eggs</li>
+              <li>Meat
+                <ul>
+                  <li>Chicken</li>
+                  <li>Beef</li>
+                  <li>Pork</li>
+                </ul>
+              </li>
+              <li>Milk</li>
+            </ul>
+            <h2>Ordered TODO List</h2>
+            <ol>
+              <li>Relax</li>
+              <li>Finish homework
+                <ol>
+                  <li>Analyze requirements</li>
+                  <li>Create HTML page</li>
+                  <li>Upload to Github</li>
+                </ol>
+              </li>
+              <li>Enjoy your day</li>
+            </ol>
+            <h3>Definition List</h3>
+            <dl>
+              <dt>HTML</dt>
+              <dd>HTML is the standard markup language for Web pages</dd>
+              <dt>CSS</dt>
+              <dd>CSS describes how HTML elements are to be displayed</dd>
+              <dt>JavaScript</dt>
+              <dd>JavaScript is the Programming Language for the Web</dd>
+            </dl>
+            <span>Select option</span>
+            <select name="select">
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+              <option value="js">JS</option>
+            </select>
+            <hr />
           </section>
 
           <section id="table">
-            <h2></h2>
+            <h2>Table</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Cities</th>
+                  <th>Technologies</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Lviv</td>
+                  <td>HTML</td>
+                </tr>
+                <tr>
+                  <td>Vinnytsia</td>
+                  <td>CSS</td>
+                </tr>
+                <tr>
+                  <td>Dnipro</td>
+                  <td>JavaScript</td>
+                </tr>
+                <tr>
+                  <td>Kharkiv</td>
+                  <td>Angular</td>
+                </tr>
+                <tr>
+                  <td>Kyiv</td>
+                  <td>ReactJS</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
           <section id="blockquotes">
-            <h2></h2>
+            <h2>Blockquotes</h2>
+            <p>Let&#8217;s keep it simple. Italics are good to help set it off from the body text. Be sure to style the
+              citation.</p>
+            <blockquote>
+              "If you go back a few hundred years, what we take for granted today would seem like magic-being able
+              to talk to people over long distances, to transmit images, flying, accessing vast amounts of data
+              like an oracle. These are all things that would have been considered magic a few hundred years ago."
+              <br />
+              <a href="#">Elon Musk</a>
+            </blockquote>
+            <hr />
+            <form action="#">
+              <label for="firstName">First name:</label>
+              <input type="text" name="username" id="firstName" /><br />
+              <label for="secondName">Second name:</label>
+              <input type="text" name="username" id="secondName" /><br />
+              <label for="email">Email:</label>
+              <input type="text" name="username" id="email" /><br />
+              <label for="password">Password:</label>
+              <input type="text" name="username" id="password" /><br />
+              <textarea name="message" id="textarea" cols="30" rows="5"></textarea><br />
+              <button type="submit">Submit</button>
+            </form>
           </section>
 
           <footer>&copy; Copyright Epam Systems</footer>
