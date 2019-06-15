@@ -51,7 +51,7 @@
               imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu
               volutpat enim diam eget metus. To copy a file type
               <kbd>COPY</kbd>
-              <i>filename</i>.
+              <em>filename</em>.
               <del>Dinner`s at 5:00.</del>
               <ins>Let&#8217;s make that 7.</ins>
               This <s>text</s> has been struck.</p>
@@ -71,12 +71,10 @@
 
           <section id="text">
             <h2>Text formats</h2>
+            <h3>Article Text</h3>
             <article>
-              <h3>Article Text</h3>
-              <article>
-                <h2>Article title</h2>
-                <p>Article description</p>
-              </article>
+              <h2>Article title</h2>
+              <p>Article description</p>
             </article>
             <h3>Preformatted Text</h3>
             <pre>
@@ -133,8 +131,8 @@ both           spaces and
               <dt>JavaScript</dt>
               <dd>JavaScript is the Programming Language for the Web</dd>
             </dl>
-            <span>Select option</span>
-            <select name="select">
+            <label for="selectForm">Select option</label>
+            <select name="select" id="selectForm">
               <option value="html">HTML</option>
               <option value="css">CSS</option>
               <option value="js">JS</option>
@@ -191,13 +189,13 @@ both           spaces and
             <hr />
             <form action="#">
               <label for="firstName">First name:</label>
-              <input type="text" name="username" id="firstName" /><br />
+              <input type="text" name="firstName" id="firstName" /><br />
               <label for="secondName">Second name:</label>
-              <input type="text" name="username" id="secondName" /><br />
+              <input type="text" name="secondName" id="secondName" /><br />
               <label for="email">Email:</label>
-              <input type="text" name="username" id="email" /><br />
+              <input type="text" name="email" id="email" /><br />
               <label for="password">Password:</label>
-              <input type="text" name="username" id="password" /><br />
+              <input type="text" name="password" id="password" /><br />
               <textarea name="message" id="textarea" cols="30" rows="5"></textarea><br />
               <button type="submit">Submit</button>
             </form>
