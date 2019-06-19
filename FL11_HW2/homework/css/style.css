@@ -5,6 +5,12 @@ write your code here
 */
 
 @media print {
+  @page {
+    margin-left: 0.85in;
+    margin-right: 0.85in;
+    margin-bottom: 0.85in;
+  }
+
   body {
     color: #000;
     background-color: #fff;
@@ -19,14 +25,13 @@ write your code here
   #contact {
     display: none;
   }
-  
+
   .container div {
     max-width: 100%;
     text-align: center;
   }
 
   h2 {
-    page-break-before: auto;
     text-transform: uppercase;
     color: lightskyblue;
     font-weight: 300;
@@ -54,11 +59,7 @@ write your code here
   }
 
   .carousel {
-    padding: 50px 20px 10px;
-  }
-
-  .container {
-    max-width: 6.6in;
+    padding: 10px 20px 10px;
   }
 
   .heading ol {
