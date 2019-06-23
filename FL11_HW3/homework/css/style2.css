@@ -19,8 +19,7 @@ body {
 
 .landing-logo {
   display: flex;
-  flex-direction: row;
-  align-content: center; }
+  flex-direction: row; }
   .landing-logo img {
     width: 55px;
     height: 55px; }
@@ -36,9 +35,19 @@ body {
 
 .header_heading {
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 60px;
+  font-size: 90px;
   font-weight: bold;
-  width: 30%; }
+  line-height: 1em; }
+
+.header_heading::before {
+  content: '';
+  float: right;
+  width: calc(100% - 8em);
+  height: 1em; }
+
+.header_text {
+  white-space: pre-line;
+  font-size: 2em; }
 
 .header_button,
 .section_banner_button {
