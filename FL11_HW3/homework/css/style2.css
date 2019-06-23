@@ -1,2 +1,86 @@
+* {
+  padding: 0;
+  margin: 0; }
+
 body {
-  background-color: #fff; }
+  background-color: #21232e;
+  font-family: "Fresca", sans-serif; }
+
+.header {
+  background: url("../img/m-h-night.jpg");
+  background-size: cover;
+  border-bottom-right-radius: 50%;
+  color: #fff; }
+
+.header-wrap {
+  width: 80%;
+  margin: 0 auto;
+  padding: 25px 0 200px 0; }
+
+.landing-logo {
+  display: flex;
+  flex-direction: row;
+  align-content: center; }
+  .landing-logo img {
+    width: 55px;
+    height: 55px; }
+  .landing-logo span {
+    display: block;
+    font-size: 12px;
+    text-align: center; }
+  .landing-logo p {
+    line-height: 1;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 20px; }
+
+.header_heading {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  width: 30%; }
+
+.header_button,
+.section_banner_button {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  padding: 15px 50px;
+  color: white;
+  background: #e3ac00;
+  border-radius: 3px;
+  border: none; }
+
+.section_card_wrap {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center; }
+
+.section_card {
+  flex-grow: 1;
+  background: #21232e;
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+  padding: 25px;
+  width: 500px; }
+  .section_card img {
+    width: 100%;
+    border-radius: 10px; }
+
+.section_text {
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold; }
+
+.section_card_heading {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 32px;
+  text-align: center; }
+
+.section_card_text {
+  color: #c0c3ce;
+  font-size: 18px; }
