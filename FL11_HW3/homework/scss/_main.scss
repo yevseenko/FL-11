@@ -1,6 +1,5 @@
 @mixin font($group, $variant: regular, $properties: family weight style, $font-stack: $default-font-stack) {
   $font-properties: map-deep-get($font-stack, $group, $variant);
-  
   @if $font-properties {
     @each $property, $values in $font-properties {
       @if contains($properties, $property) {
@@ -12,7 +11,7 @@
 
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
-      $map: map-get($map, $key);
+    $map: map-get($map, $key);
   }
 
   @return $map;
@@ -38,8 +37,8 @@ body {
   @include font(primary);
 }
 
-body::-webkit-scrollbar { 
-  display: none; 
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .header {
@@ -194,14 +193,14 @@ body::-webkit-scrollbar {
 }
 
 .section_card_underline::after {
-    display: block;
-    content: '';
-    width: 100%;
-    height: 16px;
-    background: getColor(afterTextColor);
-    position: relative;
-    top: -16px;
-    z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 16px;
+  background: getColor(afterTextColor);
+  position: relative;
+  top: -16px;
+  z-index: -1;
 }
 
 .section_card_text {
@@ -227,7 +226,7 @@ body::-webkit-scrollbar {
 
 .section_banner_text_wrap {
   width: 64%;
-  
+
   .section_banner_heading {
     @include font(heading, bolder);
     font-size: 38px;
@@ -287,7 +286,3 @@ body::-webkit-scrollbar {
   @extend .footer_logo;
   font-size: 20px;
 }
-
-
-
-
