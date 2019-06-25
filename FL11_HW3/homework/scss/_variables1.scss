@@ -1,3 +1,48 @@
-$colors: (bgColor: #fff, headerHeadingColor: #2c2f3c, btnColor: #699900);
-$fonts: (headingFont: ('Source Sans Pro', sans-serif), bodyFont: ('Hind', sans-serif));
+$colors: (
+  bgColor: #fff, 
+  headerColor: #2c2f3c,
+  sectionTextColor: #21232e,
+  sectionBgColor: #21232e,
+  sectionCardTextColor: #c0c3ce,
+  sectionBannerHeadingColor: #2c2f3c,
+  sectionBannerTextColor: #c0c3ce,
+  afterTextColor: #14a0c7,
+  footerBgColor: #21232e,
+  footerTextColor: #c0c3ce,
+  btnColor: #699900
+);
+
+$default-font-stack: (
+  heading: (
+    regular: (
+      family: ('Source Sans Pro', sans-serif),
+      weight: 400,
+      style: normal
+    ),
+    bold: (
+      family: ('Source Sans Pro', sans-serif),
+      weight: 600,
+      style: normal
+    ),
+    bolder: (
+      family: ('Source Sans Pro', sans-serif),
+      weight: 700,
+      style: normal
+    )
+  ),
+  primary: (
+    regular: (
+      family: ('Hind', sans-serif),
+      weight: 400,
+      style: normal
+    ),
+    bold: (
+      family: ('Hind', sans-serif),
+      weight: 600,
+      style: normal
+    )
+  )
+);
+
 $bgImage: url("../img/m-h-day.jpg");
+$gradient: linear-gradient(45deg, #699902, #2c5ade);

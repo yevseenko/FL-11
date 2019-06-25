@@ -1,32 +1,61 @@
-@function getColor($color) {
-  @return map-get($colors, $color);
+@mixin font($group, $variant: regular, $properties: family weight style, $font-stack: $default-font-stack) {
+  $font-properties: map-deep-get($font-stack, $group, $variant);
+  
+  @if $font-properties {
+    @each $property, $values in $font-properties {
+      @if contains($properties, $property) {
+        font-#{$property}: map-get($font-properties, $property);
+      }
+    }
+  }
 }
 
-@function getFont($font) {
-  @return map-get($fonts, $font);
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+@function getColor($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  }
+
+  @warn "Unknown `#{$color}` in $colors.";
+  @return null;
 }
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: getColor(bgColor);
-  font-family: getFont(bodyFont);
+  @include font(primary);
+}
+
+body::-webkit-scrollbar { 
+  display: none; 
 }
 
 .header {
-  background: $bgImage;
-  background-size: cover;
-  border-bottom-right-radius: 50%;
-  color: getColor(headerHeadingColor);
+  background: $bgImage no-repeat center center;
+  background-size: 1920px 1280px;
+  background-position-y: -190px;
+  border-bottom-right-radius: 40%;
+  color: getColor(headerColor);
+  position: relative;
+  z-index: 1;
 }
 
 .header-wrap {
   width: 80%;
   margin: 0 auto;
-  padding: 25px 0 200px 0;
+  padding: 25px 0 218px 0;
 }
 
 .landing-logo {
@@ -40,86 +69,225 @@ body {
 
   span {
     display: block;
-    font-size: 12px;
+    font-size: 13px;
     text-align: center;
   }
 
   p {
-    line-height: 1;
-    font-weight: bold;
-    font-size: 24px;
-    margin-left: 20px;
+    line-height: 1.22;
+    @include font(primary, bold);
+    font-size: 31px;
+    margin-left: 18px;
   }
 }
 
 .header_heading {
-  font-family: getFont(headingFont);
+  @include font(heading, bolder);
   font-size: 90px;
-  font-weight: bold;
-  line-height: 1em;
-}
+  line-height: 1;
+  margin: 90px 0 15px 0;
 
-.header_heading::before {
-  content: '';
-  float: right;
-  width: calc(100% - 8em);
-  height: 1em;
+  &::before {
+    content: '';
+    float: right;
+    width: calc(100% - 8em);
+    height: 1em;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    width: 380px;
+    height: 31px;
+    background: getColor(afterTextColor);
+    position: relative;
+    top: -30px;
+    z-index: -1;
+  }
 }
 
 .header_text {
   white-space: pre-line;
-  font-size: 2em;
+  letter-spacing: .013em;
+  font-size: 20px;
+  line-height: 1.5;
 }
 
-.header_button,
-.section_banner_button {
-  font-family: getFont(headingFont);
-  font-size: 16px;
-  padding: 15px 50px;
+.header_button {
+  @include font(heading, bold);
+  margin-top: 75px;
+  font-size: 23px;
+  padding: 16px 54px;
   color: white;
   background: getColor(btnColor);
   border-radius: 3px;
   border: none;
-}
 
-.section_card_wrap {
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: center;
-}
-
-.section_card {
-  flex-grow: 1;
-  background: #21232e;
-  border-radius: 10px;
-  color: white;
-  margin: 10px;
-  padding: 25px;
-  width: 500px;
-
-  img {
-    width: 100%;
-    border-radius: 10px;
+  &:hover {
+    background: lighten(getColor(btnColor), 10%);
+    cursor: pointer;
   }
 }
 
+.section_banner_button {
+  @extend .header_button;
+  margin-top: 20px;
+}
+
+.section_card_wrap {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.section_card {
+  background: getColor(sectionBgColor);
+  border-radius: 10px;
+  color: white;
+  padding: 25px;
+  width: 32.2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section_card_img {
+  width: 100%;
+  border-radius: 10px;
+}
+
 .section_text {
-  font-family: getFont(headingFont);
+  @include font(heading, bold);
+  width: 530px;
+  margin: 45px auto 47px;
   text-align: center;
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 53px;
+  color: getColor(sectionTextColor);
+
+  &::after {
+    display: block;
+    content: '';
+    width: 240px;
+    height: 16px;
+    background: getColor(afterTextColor);
+    position: relative;
+    float: right;
+    top: -27px;
+    left: -17px;
+    z-index: -1;
+  }
 }
 
 .section_card_heading {
-  font-family: getFont(headingFont);
-  font-size: 32px;
-  text-align: center;
+  @include font(heading, bold);
+  font-size: 30px;
+  display: inline-block;
+  margin-top: 17px;
+  z-index: 1;
+}
+
+.section_card_underline {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section_card_underline::after {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 16px;
+    background: getColor(afterTextColor);
+    position: relative;
+    top: -16px;
+    z-index: -1;
 }
 
 .section_card_text {
-  color: #c0c3ce;
-  font-size: 18px;
+  color: getColor(sectionCardTextColor);
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
 }
+
+.section_banner {
+  width: 1200px;
+  background: $gradient;
+  margin: 175px auto -92px;
+  padding: 30px 0 50px 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section_banner_text_wrap {
+  width: 64%;
+  
+  .section_banner_heading {
+    @include font(heading, bolder);
+    font-size: 38px;
+    padding-bottom: 20px;
+    color: getColor(sectionBannerHeadingColor);
+
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 81px;
+      height: 17px;
+      background: getColor(afterTextColor);
+      position: relative;
+      top: 6px;
+      right: 372px;
+      z-index: -1;
+    }
+  }
+
+  .section_banner_text {
+    color: getColor(sectionBannerTextColor);
+    font-size: 20px;
+  }
+}
+
+.footer {
+  padding: 135px 0 45px 0;
+  background-color: getColor(footerBgColor);
+  position: relative;
+  z-index: -1;
+}
+
+.footer-wrap {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.footer_logo {
+  color: getColor(footerTextColor);
+}
+
+.footer_text {
+  @extend .footer_logo;
+  width: 25%;
+  font-size: 17px;
+  letter-spacing: .013em;
+  line-height: 1.5;
+  margin-right: 5px;
+}
+
+.footer-cr {
+  @extend .footer_logo;
+  font-size: 20px;
+}
+
+
+
+

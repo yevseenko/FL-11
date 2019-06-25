@@ -1,3 +1,48 @@
-$colors: (bgColor: #21232e, headerHeadingColor: #fff, btnColor: #e3ac00);
-$fonts: (headingFont: ('Source Sans Pro', sans-serif), bodyFont: ('Fresca', sans-serif));
+$colors: (
+  bgColor: #21232e, 
+  headerColor: #fff, 
+  sectionTextColor: #fff,
+  sectionBgColor: #3b3f50,
+  sectionCardTextColor: #d1d1cd,  
+  sectionBannerHeadingColor: #fff,
+  sectionBannerTextColor: #d1d1d1,
+  afterTextColor: #ff4e33,
+  footerBgColor: #3b3f50,
+  footerTextColor: #d1d1d1,
+  btnColor: #e3ac00
+);
+
+$default-font-stack: (
+  heading: (
+    regular: (
+      family: ('Source Sans Pro', sans-serif),
+      weight: 400,
+      style: normal
+    ),
+    bold: (
+      family: ('Source Sans Pro', sans-serif),
+      weight: 600,
+      style: normal
+    ),
+    bolder: (
+      family: ('Source Sans Pro', sans-serif),
+      weight: 700,
+      style: normal
+    )
+  ),
+  primary: (
+    regular: (
+      family: ('Fresca', sans-serif),
+      weight: 400,
+      style: normal
+    ),
+    bold: (
+      family: ('Fresca', sans-serif),
+      weight: 600,
+      style: normal
+    )
+  )
+);
+
 $bgImage: url("../img/m-h-night.jpg");
+$gradient: linear-gradient(45deg, #e3ac01, #ff0066);
