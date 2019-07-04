@@ -9,8 +9,8 @@ let magicNumber = 2;
 for (let key in obj) {
   if (obj.hasOwnProperty(key)) {
     obj[key] = +prompt(`Enter triangle side [${key.toUpperCase()}] length:`, '');
-    if (isNaN(parseFloat(obj[key]) && !isFinite(obj[key])) || obj[key] <= 0) {
-      alert(`Not valid length. Please press F5 and enter new data`);
+    if (isNaN(obj[key]) || !isFinite(obj[key]) || obj[key] <= 0) {
+      alert(`Error! Not valid length ${obj[key]}. Please press F5 and enter new data`);
       break;
     }
   }

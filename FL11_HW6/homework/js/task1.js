@@ -18,15 +18,15 @@ let isNumber = true;
 for (let key in coordinates) {
   if (coordinates[key].hasOwnProperty('x') && coordinates[key].hasOwnProperty('y')) {
     coordinates[key]['x'] = +prompt(`Enter coordinate X of point ${key}:`, '');
-    if (isNaN(parseFloat(coordinates[key]['x'])) && !isFinite(coordinates[key]['x'])) {
+    if (isNaN(coordinates[key]['x']) || !isFinite(coordinates[key]['x'])) {
       isNumber = false;
-      alert('Not a number, please press F5 to continue');
+      alert(`[${coordinates[key]['x']}] - not a number, please press F5 to continue`);
       break;
     }
     coordinates[key]['y'] = +prompt(`Enter coordinate Y of point ${key}:`, '');
-    if (isNaN(parseFloat(coordinates[key]['y'])) && !isFinite(coordinates[key]['y'])) {
+    if (isNaN(coordinates[key]['y']) || isFinite(coordinates[key]['y'])) {
       isNumber = false;
-      alert('Not a number, please press F5 to continue');
+      alert(`[${coordinates[key]['y']}] - not a number, please press F5 to continue`);
       break;
     }
   }
