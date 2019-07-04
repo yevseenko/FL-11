@@ -34,8 +34,8 @@ for (let key in coordinates) {
 
 if (isNumber) {
   let magicNumber = 2;
-  let halfOnX = (coordinates['A']['x'] + coordinates['B']['x']) / coordinates['C']['x'] === magicNumber;
-  let halfOnY = (coordinates['A']['y'] + coordinates['B']['y']) / coordinates['C']['y'] === magicNumber;
+  let halfOnX = (coordinates['A']['x'] + coordinates['B']['x']) / magicNumber === coordinates['C']['x'];
+  let halfOnY = (coordinates['A']['y'] + coordinates['B']['y']) / magicNumber === coordinates['C']['y'];
 
   halfOnX && halfOnY ? console.log(true) : console.log(false);
 }
