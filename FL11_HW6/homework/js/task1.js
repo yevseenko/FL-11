@@ -24,7 +24,7 @@ for (let key in coordinates) {
       break;
     }
     coordinates[key]['y'] = +prompt(`Enter coordinate Y of point ${key}:`, '');
-    if (isNaN(coordinates[key]['y']) || isFinite(coordinates[key]['y'])) {
+    if (isNaN(coordinates[key]['y']) || !isFinite(coordinates[key]['y'])) {
       isNumber = false;
       alert(`[${coordinates[key]['y']}] - not a number, please press F5 to continue`);
       break;
