@@ -1,29 +1,28 @@
-let obj = {
-  a: 0,
-  b: 0,
-  c: 0
-}
+let triangle = ['A', 'B', 'C'];
+let sides = {};
 
-let magicNumber = 2;
-
-for (let key in obj) {
-  if (obj.hasOwnProperty(key)) {
-    obj[key] = +prompt(`Enter triangle side [${key.toUpperCase()}] length:`, '');
-    if (isNaN(obj[key]) || !isFinite(obj[key]) || obj[key] <= 0) {
-      alert(`Error! Not valid length ${obj[key]}. Please press F5 and enter new data`);
-      break;
-    }
-  }
-}
-
-if (Math.max(obj.a, obj.b, obj.c) < (obj.a + obj.b + obj.c) / magicNumber) {
-  if (obj.a === obj.b && obj.b === obj.c) {
-    console.log(`Eequivalent triangle`);
-  } else if (obj.a === obj.b || obj.a === obj.c || obj.b === obj.c) {
-    console.log(`Isosceles triangle`);
+for (let i = 0; i < triangle.length; i++) {
+  const val = +prompt(`Enter triangle side [${triangle[i]}] length:`, '');
+  if (isNaN(val) || !isFinite(val) || val <= 0) {
+    sides = null;
+    alert(`Error! Not valid length ${val}. Please press F5 and enter new data`);
+    break;
   } else {
-    console.log(`Normal triangle`);
+    sides[triangle[i]] = val;
   }
-} else {
-  console.log(`Triangle doesn't exits`);
+}
+
+if (sides) {
+  let magicNumber = 2;
+  if (Math.max(sides['A'], sides['B'], sides['C']) < (sides['A'] + sides['B'] + sides['C']) / magicNumber) {
+    if (sides['A'] === sides['B'] && sides['B'] === sides['C']) {
+      console.log(`Eequivalent triangle`);
+    } else if (sides['A'] === sides['B'] || sides['A'] === sides['C'] || sides['B'] === sides['C']) {
+      console.log(`Isosceles triangle`);
+    } else {
+      console.log(`Normal triangle`);
+    }
+  } else {
+    console.log(`Triangle doesn't exits`);
+  }
 }
