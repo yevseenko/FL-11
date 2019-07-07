@@ -17,5 +17,5 @@ if (points) {
   let halfOnX = (points['aX'] + points['bX']) / magicNumber === points['cX'];
   let halfOnY = (points['aY'] + points['bY']) / magicNumber === points['cY'];
 
-  halfOnX && halfOnY ? console.log(true) : console.log(false);
+  console.log(halfOnX && halfOnY);
 }
