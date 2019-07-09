@@ -15,7 +15,6 @@ const game = {
 
 while (continuePlaying) {
   const randomNum = Math.floor(Math.random() * (game.maxNum + game.rangeMaxInc));
-  console.log(randomNum);
   game.currentPrize = game.initPrize;
   while (game.currentAttempts > 0) {
     const userInput = +prompt(`
