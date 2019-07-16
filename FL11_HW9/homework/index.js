@@ -84,7 +84,11 @@ function executeForEach(arr, callback) {
   }
 }
 
-console.log(executeForEach([data.efe.argOne, data.efe.argTwo, data.efe.argThree], function (el) {
+console.log(executeForEach([
+  data.efe.argOne,
+  data.efe.argTwo,
+  data.efe.argThree
+], function (el) {
   console.log(el);
 }));
 
