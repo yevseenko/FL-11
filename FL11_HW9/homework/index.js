@@ -75,6 +75,7 @@ function findTypes(...args) {
   return obj;
 }
 
+console.log(findTypes('number'));
 console.log(findTypes(data.ft.typeOne, data.ft.typeTwo, data.ft.typeThree));
 
 function executeForEach(arr, callback) {
