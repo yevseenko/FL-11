@@ -2,6 +2,7 @@
   const rootNode = document.querySelector('#root');
   const inputField = document.querySelector('#inputField');
   const addBtn = document.querySelector('#addBtn');
+  const message = document.querySelector('#message');
   let nodesList;
   let dragSrcEl = null;
   const todos = {
@@ -64,15 +65,17 @@
       inputField.removeEventListener('input', handleInput);
       addBtn.removeEventListener('click', handleClick);
       listeners.added = false;
-      console.log('Listeners removed')
+      inputField.disabled = true;
+      message.classList.remove('hidden');
     }
 
-    if (!listeners.added) {
+    if (!listeners.added && temp.length < MAX_LENGTH) {
       inputField.addEventListener('keypress', handleKeyPress, false);
       inputField.addEventListener('input', handleInput, false);
       addBtn.addEventListener('click', handleClick, false);
       listeners.added = true;
-      console.log('listeners added');
+      inputField.disabled = false;
+      message.className += ' hidden';
     }
 
     const data = temp.map(item => {
