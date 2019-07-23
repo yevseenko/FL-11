@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+.main {
+  max-width: 600px;
+  margin: 50px auto;
+}
+
+h1 {
+  color: #00B4FA;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  font-size: 24px;
+  border-radius: 3px;
+  border: 1px solid #999;
+  padding-left: 10px;
+}
+
+ul {
+  list-style: none;
+  font-size: 20px;
+  color: #00B4FA;
+  padding: 0;
+}
+
+li {
+  width: 100%;
+  line-height: 2.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+li div {
+  display: flex;
+  align-items: center;
+}
+
+li span {
+  margin: 0 10px;
+}
+
+li i {
+  color: #c3e1e2;
+}
+
+i:hover {
+  color: #00B4FA;
+  cursor: pointer;
+}
+
+hr {
+  border: 2px solid #c3e1e2;
+  margin-bottom: 20px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-inactive:hover {
+  color: rgba(0, 0, 0, 0.26);
+  cursor: default;
+}
+
+.right {
+  justify-self: flex-end;
+}
+
+.control-form {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+[draggable] {
+  user-select: none;
+}
+
+.over {
+  border: 1px dashed #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+.warn {
+  color: red;
+  text-align: center;
+}
