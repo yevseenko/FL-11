@@ -1,2 +1,48 @@
-/* Your styles go here */
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 1.5em;
+  width: 300px;
+  margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+img {
+  margin: 0 10px;
+}
+
+span {
+  font-size: 1.5em;
+}
+
+input {
+  font-size: 1.5em;
+}
+
+.done {
+  text-decoration: line-through;
+}
