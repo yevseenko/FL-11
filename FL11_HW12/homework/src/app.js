@@ -125,12 +125,13 @@
 	function removeAlert() {
 		const TIMEOUT = 5000;
 		setTimeout(() => {
-			rootNode.removeChild(document.getElementById('alert'));
+			if (document.getElementById('alert')) {
+				rootNode.removeChild(document.getElementById('alert'));
+			}
 		}, TIMEOUT);
 	}
 
 	function listHandler(e) {
-		console.log(e.target);
 		switch (e.target.name) {
 			case 'remove':
 				removeTodo(e.target.parentNode.id);
@@ -189,11 +190,9 @@
 	function windowHashChange() {
 		switch (location.hash) {
 			case '#add':
-				console.log('location #add');
 				addView();
 				break;
 			case '#edit':
-				console.log('location #edit');
 				editView();
 				break;
 			default:
